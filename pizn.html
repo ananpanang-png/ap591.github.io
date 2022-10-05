@@ -12,7 +12,7 @@
     <script>
       const urlSearchParams = new URLSearchParams(window.location.search);
       const params = Object.fromEntries(urlSearchParams.entries());
-      fetch("pizn.json")
+      fetch("https://raw.githubusercontent.com/ap591/ap591.github.io/main/pizn%2Cjson")
         .then((response) => response.json())
         .then((json) => document.getElementById("content").innerHTML = json);
     </script>
