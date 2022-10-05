@@ -5,4 +5,4 @@ Not much here actually, just a README.md following github tradition.
 
 ## List of files
 * pizn.html - Pizn documentation page
-** pizn.json - Data for pizn.html
+    * pizn.json - Data for pizn.html
