@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pizn Documentation</title>
+  </head>
+  <body style="font-family: arial;">
+    <span style="font-size: 35px;">Pizn Documentation</span>
+    <br>
+    Hello
+    <hr>
+    <div id="content"></div>
+    <script>
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const params = Object.fromEntries(urlSearchParams.entries());
+      fetch("pizn.json")
+        .then((response) => response.json())
+        .then((json) => document.getElementById("content").innerHTML = json
+    </script>
+  </body>
+</html>
