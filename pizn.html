@@ -12,9 +12,13 @@
     <script>
       const urlSearchParams = new URLSearchParams(window.location.search);
       const params = Object.fromEntries(urlSearchParams.entries());
+      const newParams = Object.keys(params)[0];
+      if(newParams === undefined) {
+        window.location.replace("https://ap591.github.io/pizn.html?introduction");
+      }
       fetch("https://raw.githubusercontent.com/ap591/ap591.github.io/main/pizn%2Cjson")
         .then((response) => response.json())
-        .then((json) => document.getElementById("content").innerHTML = json[Object.keys(params)[0]]);
+        .then((json) => document.getElementById("content").innerHTML = json[newParams]);
     </script>
   </body>
 </html>
