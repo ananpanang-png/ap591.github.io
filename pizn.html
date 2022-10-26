@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pizn Documentation</title>
+  </head>
+  <body style="font-family: arial;">
+    <span style="font-size: 35px;">Pizn Documentation</span>
+    <br>
+    <a href="https://ap591.github.io/pizn.html?introduction">Introduction</a> /
+    <a href="https://ap591.github.io/pizn.html?concept">Concept</a> /
+    <a href="https://ap591.github.io/pizn.html?functionlist">List of functions</a> /
+    <a href="https://ap591.github.io/pizn.html?examples">Simple examples</a> /
+    <a href="https://ap591.github.io/pizn.html?credits">Project credits</a>
+    <hr>
+    <div id="content"></div>
+    <script>
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const params = Object.fromEntries(urlSearchParams.entries());
+      const newParams = Object.keys(params)[0];
+      if(newParams === undefined) {
+        window.location.replace("https://ap591.github.io/pizn.html?introduction");
+      }
+      fetch(`https://raw.githubusercontent.com/ap591/ap591.github.io/main/pizn/${newParams}.html`)
+        .then((response) => response.text())
+        .then((text) => document.getElementById("content").innerHTML = text);
+    </script>
+  </body>
+</html>
