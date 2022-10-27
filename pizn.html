@@ -15,7 +15,8 @@
     <a href="https://ap591.github.io/pizn.html?examples">Simple examples</a> /
     <a href="https://ap591.github.io/pizn.html?credits">Project credits</a>
     <hr style="border:1px solid gray">
-    <div id="content"></div>
+    <div id="index" style="width:60%;display:inline-block;border-right:2px solid gray"></div>
+    <div id="content" style="display:inline-block"></div>
     <script>
       const urlSearchParams = new URLSearchParams(window.location.search);
       const params = Object.fromEntries(urlSearchParams.entries());
@@ -23,6 +24,9 @@
       if(newParams === undefined) {
         window.location.replace("https://ap591.github.io/pizn.html?introduction");
       }
+      fetch(`https://raw.githubusercontent.com/ap591/ap591.github.io/main/piznindex.html`)
+        .then((response) => response.text())
+        .then((text) => document.getElementById("index").innerHTML = text);
       fetch(`https://raw.githubusercontent.com/ap591/ap591.github.io/main/pizn/${newParams}.html`)
         .then((response) => response.text())
         .then((text) => document.getElementById("content").innerHTML = text);
